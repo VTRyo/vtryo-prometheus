@@ -4,7 +4,7 @@ services:
     image: prom/prometheus
     container_name: prometheus
     volumes:
-      - /Users/ryo/Applications/Prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ~/git/vtryo-prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
       - 9090:9090
   grafana:
@@ -13,7 +13,7 @@ services:
     ports:
       - 3000:3000
     env_file:
-      - /Users/ryo/Applications/Prometheus/grafana.env
+      - ~/git/vtryo-prometheus/grafana.env
   node-exporter:
     image: quay.io/prometheus/node-exporter
     container_name: node-exporter
